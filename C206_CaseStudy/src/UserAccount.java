@@ -1,15 +1,39 @@
-/**
- * I declare that this code was written by me.
- * I will not copy or allow others to copy my code.
- * I understand that copying code is considered as plagiarism.
- *
- * 19022507, 24 Aug 2020 12:41:45 pm
- */
-
-/**
- * @author 19022507
- *
- */
+//UserAccount class - Ji Fu
+import java.util.ArrayList;
 public class UserAccount {
+	
+	private String accountName;
+	private String password;
+	private ArrayList<UserAccount> accountList;
+	
+	public UserAccount(String accountName, String password) {
+		this.accountName = accountName;
+		this.password = password;
+	}
+
+	public String getAccountName() {
+		return accountName;
+	}
+
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public ArrayList<UserAccount> getAccountList() {
+		return accountList;
+	}
+
+	public void setAccountList(ArrayList<UserAccount> accountList) {
+		this.accountList = accountList;
+	}
+	
 
 }
