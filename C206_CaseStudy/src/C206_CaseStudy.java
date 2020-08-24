@@ -4,6 +4,7 @@ public class C206_CaseStudy {
 
 	ArrayList<Order> orderList = new ArrayList<Order>();
 	ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
+	ArrayList<Bill>BillList=new ArrayList<Bill>();
 
 	public static void main(String[] args) {
 
@@ -122,4 +123,43 @@ public class C206_CaseStudy {
 		
 		//Uncompleted
 	}
+	public void viewAllBill(ArrayList<Bill> BillList) {		
+		String output = String.format("%-30s &-15s %-15s %-10s\n", "PAYEE", "TOTAL AMOUNT", "DUE DATE", "PAID");
+
+		for (Bill Billing : BillList) {
+			output+=String.format("%-30s $%-15.2f %-15s %-10s\n", Billing.getPayee(), Billing.getTotalAmount(), Billing.getDueDate(), 
+					Billing.isPaid());
+		}
+		 	System.out.print(output);
+		}
+	public void AddBill(ArrayList<Bill> BillList) {	
+		System.out.println("ENTER NEW BILLING DETAILS");
+		String payee =Helper.readString("Enter payee");
+		double totalAmount = Helper.readDouble("Enter total amount");
+		String dueDate = Helper.readString("Enter due date");
+		
+		BillList.add(new Bill(payee,totalAmount,dueDate));
+	}
+	public void deleteBillItem(ArrayList<Bill> BillList) {
+
+		boolean isDeleted = false;
+
+		String BillPayee = Helper.readString("Please Enter payee name to delete it > ");
+
+		for (Bill Item : BillList) {
+			if (Item.getPayee().equalsIgnoreCase(BillPayee)) {
+				BillList.remove(Item);
+				isDeleted = true;
+			}
+		}
+
+		if (isDeleted == true) {
+			System.out.println("Bill Item Successfully Deleted!");
+		}
+
+		else {
+			System.out.println("An Error Has Occured, Please Try Again!");
+		}
+	}
+
 }
