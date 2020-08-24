@@ -1,4 +1,4 @@
-//UserAccount class - Ji Fu
+//UserAccount class -Qu Ji Fu
 import java.util.ArrayList;
 public class UserAccount {
 	
