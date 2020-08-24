@@ -5,7 +5,7 @@ public class Bill {
 	private String dueDate;
 	private boolean paid; 
 	
-	public Bill(String payee,double totalAmount, String dueDate) {
+	public Bill(String payee, double totalAmount, String dueDate) {
 		this.payee=payee;
 		this.totalAmount = totalAmount;
 		this.dueDate = dueDate;

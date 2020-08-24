@@ -127,7 +127,7 @@ public class C206_CaseStudy {
 		String output = String.format("%-30s &-15s %-15s %-10s\n", "PAYEE", "TOTAL AMOUNT", "DUE DATE", "PAID");
 
 		for (Bill Billing : BillList) {
-			output+=String.format("%-30s $%-15.2f %-15s %-10s\n", Billing.getPayee(), Billing.getTotalAmount(), Billing.getDueDate(), 
+			output+=String.format("%-30s $%-15.2f %-15s %-10b\n", Billing.getPayee(), Billing.getTotalAmount(), Billing.getDueDate(), 
 					Billing.isPaid());
 		}
 		 	System.out.print(output);
@@ -137,7 +137,7 @@ public class C206_CaseStudy {
 		String payee =Helper.readString("Enter payee");
 		double totalAmount = Helper.readDouble("Enter total amount");
 		String dueDate = Helper.readString("Enter due date");
-		
+
 		BillList.add(new Bill(payee,totalAmount,dueDate));
 	}
 	public void deleteBillItem(ArrayList<Bill> BillList) {
