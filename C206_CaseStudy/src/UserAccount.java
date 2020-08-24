@@ -4,6 +4,16 @@ public class UserAccount {
 	
 	private String accountName;
 	private String password;
+	private int contactNo;
+
+	public int getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(int contactNo) {
+		this.contactNo = contactNo;
+	}
+
 	private ArrayList<UserAccount> accountList;
 	
 	public UserAccount(String accountName, String password) {
