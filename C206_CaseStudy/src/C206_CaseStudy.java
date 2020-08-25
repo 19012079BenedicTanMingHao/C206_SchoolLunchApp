@@ -4,7 +4,7 @@ public class C206_CaseStudy {
 
 	ArrayList<Order> orderList = new ArrayList<Order>();
 	ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
-	ArrayList<Bill>BillList=new ArrayList<Bill>();
+	ArrayList<Bill> BillList = new ArrayList<Bill>();
 
 	public static void main(String[] args) {
 
@@ -89,8 +89,14 @@ public class C206_CaseStudy {
 	}
 
 	public static void addMenuItem(ArrayList<MenuItem> menuItemList) {
-		// Nopt Done
+		
+		System.out.println("ENTER NEW MENU ITEM NAME");
+		String catagory = Helper.readString("Enter Item Catagory");
+		String name = Helper.readString("Enter Item Name");
+		boolean healthyChoice = Helper.readBoolean("Is it Healthier Choice? T/F");
+		double price = Helper.readDouble("Enter Item Price");
 
+		menuItemList.add(new MenuItem(catagory, name, healthyChoice,price));
 	}
 
 	public void deleteMenuItem(ArrayList<MenuItem> menuItemList) {
@@ -117,29 +123,34 @@ public class C206_CaseStudy {
 
 	public void viewMenuItem(ArrayList<MenuItem> menuItemList) {
 
-		String MenuItemPlaced = "";
+		String output = String.format("%-30s &-30s %-30s", "CATEGORY", "ITEM NAME", "HEALTHY CHOICE", "PRICE");
 
-		System.out.println(String.format("%-30s &-30s %-30s", "CATEGORY", "ITEM NAME", "HEALTHY CHOICE", "PRICE"));
-		
-		//Uncompleted
+		for (MenuItem Menu : menuItemList) {
+			output += String.format("%-30s $%-15.2f %-15s %-10b\n", Menu.getcategory(), Menu.getname(),
+					Menu.ishealthyChoice(), Menu.getprice());
+		}
+		System.out.print(output);
 	}
-	public void viewAllBill(ArrayList<Bill> BillList) {		
+
+	public void viewAllBill(ArrayList<Bill> BillList) {
 		String output = String.format("%-30s &-15s %-15s %-10s\n", "PAYEE", "TOTAL AMOUNT", "DUE DATE", "PAID");
 
 		for (Bill Billing : BillList) {
-			output+=String.format("%-30s $%-15.2f %-15s %-10b\n", Billing.getPayee(), Billing.getTotalAmount(), Billing.getDueDate(), 
-					Billing.isPaid());
+			output += String.format("%-30s $%-15.2f %-15s %-10b\n", Billing.getPayee(), Billing.getTotalAmount(),
+					Billing.getDueDate(), Billing.isPaid());
 		}
-		 	System.out.print(output);
-		}
-	public void AddBill(ArrayList<Bill> BillList) {	
+		System.out.print(output);
+	}
+
+	public void AddBill(ArrayList<Bill> BillList) {
 		System.out.println("ENTER NEW BILLING DETAILS");
-		String payee =Helper.readString("Enter payee");
+		String payee = Helper.readString("Enter payee");
 		double totalAmount = Helper.readDouble("Enter total amount");
 		String dueDate = Helper.readString("Enter due date");
 
-		BillList.add(new Bill(payee,totalAmount,dueDate));
+		BillList.add(new Bill(payee, totalAmount, dueDate));
 	}
+
 	public void deleteBillItem(ArrayList<Bill> BillList) {
 
 		boolean isDeleted = false;
