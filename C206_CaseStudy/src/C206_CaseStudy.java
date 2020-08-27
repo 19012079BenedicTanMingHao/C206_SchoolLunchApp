@@ -89,14 +89,20 @@ public class C206_CaseStudy {
 	}
 
 	public static void addMenuItem(ArrayList<MenuItem> menuItemList) {
-		
+
 		System.out.println("ENTER NEW MENU ITEM NAME");
 		String catagory = Helper.readString("Enter Item Catagory");
 		String name = Helper.readString("Enter Item Name");
 		boolean healthyChoice = Helper.readBoolean("Is it Healthier Choice? T/F");
 		double price = Helper.readDouble("Enter Item Price");
 
-		menuItemList.add(new MenuItem(catagory, name, healthyChoice,price));
+		if (price > 0) {
+			menuItemList.add(new MenuItem(catagory, name, healthyChoice, price));
+			System.out.println("Menu Item Added");
+		} else {
+			System.out.println("Please Entrer Valid Pricing ");
+
+		}
 	}
 
 	public void deleteMenuItem(ArrayList<MenuItem> menuItemList) {
@@ -130,6 +136,10 @@ public class C206_CaseStudy {
 					Menu.ishealthyChoice(), Menu.getprice());
 		}
 		System.out.print(output);
+	}
+
+	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) {
+		// Doing
 	}
 
 	public void viewAllBill(ArrayList<Bill> BillList) {
