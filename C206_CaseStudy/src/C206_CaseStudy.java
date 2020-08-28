@@ -100,7 +100,7 @@ public class C206_CaseStudy {
 			menuItemList.add(new MenuItem(catagory, name, healthyChoice, price));
 			System.out.println("Menu Item Added");
 		} else {
-			System.out.println("Please Entrer Valid Pricing ");
+			System.out.println("Please Enter Valid Pricing ");
 
 		}
 	}
@@ -137,10 +137,43 @@ public class C206_CaseStudy {
 		}
 		System.out.print(output);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 
-	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) {
-		// Doing
-	}
+	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) { 
+		//NOT DONE
+				System.out.println("Update Menu Details");
+			String customerName = Helper.readString("Please enter Item Name: ");
+			int updateoption = 0;
+			
+			
+			for (Order ViewAll : orderList) {
+			if(ViewAll.getname().equalsIgnoreCase(customerName)) {
+				System.out.println(ViewAll.getname());
+				System.out.println("1.Update Name");
+				System.out.println("2.Update ");
+				System.out.println("3. Update both");
+				updateoption = Helper.readInt("please enter option : ");
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 	public void viewAllBill(ArrayList<Bill> BillList) {
 		String output = String.format("%-30s &-15s %-15s %-10s\n", "PAYEE", "TOTAL AMOUNT", "DUE DATE", "PAID");
