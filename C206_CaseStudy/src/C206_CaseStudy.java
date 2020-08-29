@@ -112,7 +112,7 @@ public class C206_CaseStudy {
 		String MenuItemName = Helper.readString("Please Enter Menu Item name to delete it > ");
 
 		for (MenuItem object : menuItemList) {
-			if (Object.getMenuItemName().equalsIgnoreCase(MenuItemName)) {
+			if (Object.MenuItemName().equalsIgnoreCase(MenuItemName)) {
 				menuItemList.remove(object);
 				isDeleted = true;
 			}
@@ -139,7 +139,6 @@ public class C206_CaseStudy {
 	}
 
 	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) {
-		// NOT DONE
 		System.out.println("Update Menu Details");
 		String customerName = Helper.readString("Please enter Item Name: ");
 		int updateoption = 0;
@@ -169,7 +168,7 @@ public class C206_CaseStudy {
 					String NP = Integer.toString(price);
 
 					if (NP.length() > 0) {
-						ViewAll.getprice(price);
+						ViewAll.setprice(price);
 						System.out.println("Customer Detail updated");
 					}
 					if (NP.length() < 0) {
