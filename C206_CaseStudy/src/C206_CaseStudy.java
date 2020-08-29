@@ -137,43 +137,92 @@ public class C206_CaseStudy {
 		}
 		System.out.print(output);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
-	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) { 
-		//NOT DONE
-				System.out.println("Update Menu Details");
-			String customerName = Helper.readString("Please enter Item Name: ");
-			int updateoption = 0;
-			
-			
-			for (Order ViewAll : orderList) {
-			if(ViewAll.getname().equalsIgnoreCase(customerName)) {
+	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) {
+		// NOT DONE
+		System.out.println("Update Menu Details");
+		String customerName = Helper.readString("Please enter Item Name: ");
+		int updateoption = 0;
+
+		for (MenuItem ViewAll : menuItemList) {
+			if (ViewAll.getname().equalsIgnoreCase(customerName)) {
 				System.out.println(ViewAll.getname());
 				System.out.println("1.Update Name");
-				System.out.println("2.Update ");
+				System.out.println("2.Update Price");
 				System.out.println("3. Update both");
 				updateoption = Helper.readInt("please enter option : ");
+
+				// update Name
+				if (updateoption == 1) {
+					String name = Helper.readString("Please enter Name: ");
+					if (customerName.equals("")) {
+						System.out.println("name field cannot be empty");
+					} else {
+						ViewAll.setname(customerName);
+						System.out.println("Customer Detail updated");
+
+					}
+				}
+				// update price
+				else if (updateoption == 2) {
+					int price = Helper.readInt("Please enter Price: ");
+					String NP = Integer.toString(price);
+
+					if (NP.length() > 0) {
+						ViewAll.getprice(price);
+						System.out.println("Customer Detail updated");
+					}
+					if (NP.length() < 0) {
+						System.out.println("Please Enter A Valid Price");
+					}
+				}
+				// update both
+				else if (updateoption == 3) {
+					String name = Helper.readString("Please enter Name: ");
+					int price = Helper.readInt("Please enter Price: ");
+					String NP = Integer.toString(price);
+
+					if (!customerName.equals("") && (NP.length() > 0)) {
+						ViewAll.setname(name);
+						ViewAll.setprice(price);
+						System.out.println("Customer Detail updated");
+					}
+					if (customerName.equals("")) {
+						System.out.println("Name field cannot be empty");
+					}
+					if (NP.length() < 0) {
+						System.out.println("Please Enter A Valid Price");
+					}
+
+				} else {
+					System.out.println("Error!! please enter a a valid intput");
+				}
+
+			} else {
+				System.out.println("Customer not found");
 			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+		}
+
+	}
+
+	public static void SearchItemName(ArrayList<MenuItem> MenuItemList) {
+
+		String name = Helper.readString("Enter Name to search: > ");
+
+		for (int i = 0; i < MenuItemList.size(); i++) {
+			if (name.equalsIgnoreCase(MenuItemList.get(i).getname())) {
+				System.out.println(String.format(" %-20s %-20s %-20s %-20s %-20s %-20s\n", "NAME", "CATEGORY", "PRICE",
+						"MIN INCREMENT", "HEALTHY CHOICE"));
+				System.out.println(String.format("%-20s %-20s %-20.2f %-20.2f %-20s %-20s\n",
+						MenuItemList.get(i).getname(), MenuItemList.get(i).getcategory(),
+						MenuItemList.get(i).getprice(), MenuItemList.get(i).ishealthyChoice()));
+
+			} else {
+				System.out.println("No results found");
+			}
+
+		}
+	}
 
 	public void viewAllBill(ArrayList<Bill> BillList) {
 		String output = String.format("%-30s &-15s %-15s %-10s\n", "PAYEE", "TOTAL AMOUNT", "DUE DATE", "PAID");
