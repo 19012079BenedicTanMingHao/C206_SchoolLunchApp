@@ -7,15 +7,83 @@ public class C206_CaseStudy {
 	ArrayList<Bill> BillList = new ArrayList<Bill>();
 
 	public static void main(String[] args) {
-
+		
+		C206_CaseStudy.mainMenu();
+		
+		int userInput = Helper.readInt("Please Enter Choice > ");
+		
+		while(userInput !=  5) {
+			
+			if(userInput == 1) {
+				
+			}
+			else if(userInput ==2){
+				
+			}
+			else if(userInput == 3) {
+				C206_CaseStudy.subOrderMenu();
+				
+				int orderUserInput = Helper.readInt("Please Enter Choice > ");
+				
+				while(orderUserInput != 4) {
+					
+					if(orderUserInput == 1) {
+						
+					}
+					
+					else if(orderUserInput == 2) {
+						
+					}
+					
+					else if(orderUserInput == 3) {
+						
+					}
+					
+					orderUserInput = Helper.readInt("Please Enter Choice > ");
+					
+				}
+			}
+			else if(userInput == 4) {
+				
+			}
+			
+			C206_CaseStudy.mainMenu();
+			userInput = Helper.readInt("Please Enter Choice > ");
+			
+		}
+		
+		System.out.println("Thank you and have a nice day!");
 	}
-
+	
+	public static void mainMenu() {
+		Helper.line(100, "-");
+		System.out.println("WELCOME TO TEAM 2'S SCHOOL LUNCH APP ORDERING SYSTEM");
+		Helper.line(100, "-");
+		System.out.println("1. To Be Filled In ");
+		System.out.println("2. To Be Filled In ");
+		System.out.println("3. Order ");
+		System.out.println("4. To Be Filled In");
+		System.out.println("5. Exit");
+	}
+	
+	public static void subOrderMenu() {
+		Helper.line(100, "-");
+		System.out.println("ORDER");
+		Helper.line(100, "-");
+		System.out.println("1. Create Order");
+		System.out.println("2. Delete Order");
+		System.out.println("3. View Order(s)");
+		System.out.println("4. Exit");
+		
+		
+	}
+	
 	public static void addOrder(ArrayList<Order> orderList) {
 		/*
 		 * Mika's Created View Menu Item Method, this helps support my method as
 		 * afterwards users can choose their orders from the specified menu shown.
 		 */
-		// viewAllMenuItem(menuItemList);
+		//viewAllMenuItem(menuItemList);
 
 		ArrayList<MenuItem> choosenMenuItemList = new ArrayList<MenuItem>();
 		String studentId = Helper.readString("Please Enter Your Student ID > ");
@@ -264,7 +332,5 @@ public class C206_CaseStudy {
 		}
 	}
 
-	>>>>>>>branch'master'
 
-	of https:// github.com/19012079BenedicTanMingHao/C206_SchoolLunchApp.git
 }
