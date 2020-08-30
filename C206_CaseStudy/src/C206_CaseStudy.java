@@ -17,7 +17,6 @@ public class C206_CaseStudy {
 		// viewAllMenuItem(menuItemList);
 
 		ArrayList<MenuItem> choosenMenuItemList = new ArrayList<MenuItem>();
-
 		String studentId = Helper.readString("Please Enter Your Student ID > ");
 		String orderDate = Helper.readString("Please Enter Order's Delievery Date [dd/mm/yy] > ");
 		int numOfOrder = Helper.readInt("Please Number Of Items You Wish to Order > ");
@@ -122,4 +121,5 @@ public class C206_CaseStudy {
 		
 		//Uncompleted
 	}
+	
 }
