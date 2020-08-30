@@ -121,7 +121,6 @@ public class test {
 	
 	public static void updateParentAccount(ArrayList<ParentAccount> parentList) {
 		String Oldname = Helper.readString("Enter name of user Account to update > ");
-		int OldcontactNo = Helper.readInt("Enter old contact number > ");
 		String Newname = Helper.readString("Enter the new name of user account > ");
 		int NewcontactNo = Helper.readInt("Enter new contact number > ");
 		int auth = 0;
@@ -143,7 +142,6 @@ public class test {
 	}
 	public static void updateStudentAccount(ArrayList<StudentAccount> studentList) {
 		String Oldname = Helper.readString("Enter name of user Account to update > ");
-		int OldcontactNo = Helper.readInt("Enter old contact number > ");
 		String Newname = Helper.readString("Enter the new name of user account > ");
 		int NewcontactNo = Helper.readInt("Enter new contact number > ");
 		int auth = 0;
