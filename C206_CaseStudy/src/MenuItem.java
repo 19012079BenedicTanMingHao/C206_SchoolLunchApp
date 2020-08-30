@@ -1,4 +1,4 @@
-//Created By Mika
+
 public class MenuItem {
 
 	private String category;
@@ -38,8 +38,8 @@ public class MenuItem {
 		this.name = name;
 	}
 
-	public String getprice() {
-		return name;
+	public double getprice() {
+		return price;
 	}
 
 	public void setprice(double price) {
@@ -47,6 +47,9 @@ public class MenuItem {
 	}
 
 	public String toString() {
-		return toString();
+		String output = "";
+		output = String.format("%-30s %-30s %-30b %-30.2f\n", category, name,
+				healthyChoice,price);
+		return output;
 	}
 }
