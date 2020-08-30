@@ -108,11 +108,11 @@ public class C206_CaseStudy {
 
 		boolean isDeleted = false;
 
-		String MenuItemName = Helper.readString("Please Enter Menu Item name to delete it > ");
+		String name = Helper.readString("Please Enter Menu Item name to delete it > ");
 
-		for (MenuItem object : menuItemList) {
-			if (Object.MenuItemName().equalsIgnoreCase(MenuItemName)) {
-				menuItemList.remove(object);
+		for (int i = 0; i < menuItemList.size(); i++) {
+			if (name.equalsIgnoreCase(menuItemList.get(i).getname())) {
+				menuItemList.remove(i);
 				isDeleted = true;
 			}
 		}
@@ -136,9 +136,6 @@ public class C206_CaseStudy {
 		}
 		System.out.print(output);
 	}
-<<<<<<< HEAD
-	
-=======
 
 	public void UpdateMenuItem(ArrayList<MenuItem> menuItemList) {
 		System.out.println("Update Menu Details");
@@ -244,6 +241,7 @@ public class C206_CaseStudy {
 		BillList.add(new Bill(payee, totalAmount, dueDate));
 	}
 
+
 	public void deleteBillItem(ArrayList<Bill> BillList) {
 
 		boolean isDeleted = false;
@@ -266,5 +264,7 @@ public class C206_CaseStudy {
 		}
 	}
 
->>>>>>> branch 'master' of https://github.com/19012079BenedicTanMingHao/C206_SchoolLunchApp.git
+	>>>>>>>branch'master'
+
+	of https:// github.com/19012079BenedicTanMingHao/C206_SchoolLunchApp.git
 }
