@@ -1,4 +1,4 @@
-
+//Created By Mika
 public class MenuItem {
 
 	private String category;
@@ -42,7 +42,7 @@ public class MenuItem {
 		return name;
 	}
 
-	public void getprice(double price) {
+	public void setprice(double price) {
 		this.price = price;
 	}
 
