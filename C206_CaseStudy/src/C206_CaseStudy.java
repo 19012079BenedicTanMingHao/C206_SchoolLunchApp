@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class C206_CaseStudy {
-
 	ArrayList<Order> orderList = new ArrayList<Order>();
 	ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
 	ArrayList<Bill> BillList = new ArrayList<Bill>();
@@ -44,6 +43,9 @@ public class C206_CaseStudy {
 				if (option > 8 || option < 1) {
 					System.out.println("Please enter a valid option");
 				}
+				else {
+					System.out.println("Thank you for using.");
+				}
 			}
 
 			else if (userInput == 2) {
@@ -54,7 +56,21 @@ public class C206_CaseStudy {
 				C206_CaseStudy.subOrderMenu();
 				int option = 0;
 				option = Helper.readInt("Enter option > ");
-				
+				if (option == 1) {
+					
+				}
+				if (option == 2) {
+					
+				}
+				if (option == 3) {
+					
+				}
+				if (option > 4 || option <1) {
+					
+				}
+				else {
+					
+				}
 				
 				
 			}
