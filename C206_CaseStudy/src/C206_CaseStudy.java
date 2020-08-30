@@ -6,85 +6,68 @@ public class C206_CaseStudy {
 	ArrayList<MenuItem> menuItemList = new ArrayList<MenuItem>();
 	ArrayList<Bill> BillList = new ArrayList<Bill>();
 
-
 	public static void main(String[] args) {
 		ArrayList<ParentAccount> parentList = new ArrayList<ParentAccount>();
 		ArrayList<StudentAccount> studentList = new ArrayList<StudentAccount>();
-		
-		C206_CaseStudy.mainMenu();
-		
-		int userInput = Helper.readInt("Please Enter Choice > ");
-		
-		while(userInput !=  5) {
-			
-			if(userInput == 1) {
-				
-			}
-			else if(userInput ==2){
-				
-			}
-			else if(userInput == 3) {
-				C206_CaseStudy.subOrderMenu();
-				
-				int orderUserInput = Helper.readInt("Please Enter Choice > ");
-				
-				while(orderUserInput != 4) {
-					
-					if(orderUserInput == 1) {						
-					int option = 0;
-					userAccountmenu();
-					option = Helper.readInt("Enter option > ");
-					if (option == 1) {
-						C206_CaseStudy.addParentAccount(parentList);
-					}
-					if (option ==2) {
-						C206_CaseStudy.addStudentAccount(studentList);
-					}
-					if (option == 3) {
-						C206_CaseStudy.viewAllParentAccount(parentList);
-					}
-					if (option ==4) {
-						C206_CaseStudy.viewAllStudentAccount(studentList);
-					}
-					if (option == 5) {
-						C206_CaseStudy.updateParentAccount(parentList);
-					}
-					if (option == 6) {
-						C206_CaseStudy.updateStudentAccount(studentList);
-					}
-					if (option == 7) {
-						C206_CaseStudy.searchStudentAccount(studentList);
-					}
-					if (option > 8 || option < 1) {
-						System.out.println("Please enter a valid option");
-					}
-				}
-					
-					else if(orderUserInput == 2) {
 
-						
-					}
-					
-					else if(orderUserInput == 3) {
-						
-					}
-					
-					orderUserInput = Helper.readInt("Please Enter Choice > ");
-					
+		C206_CaseStudy.mainMenu();
+		int userInput = 0;
+
+		while (userInput != 5) {
+			userInput = Helper.readInt("Please Enter Choice > ");
+			if (userInput == 1) {
+				C206_CaseStudy.subOrderMenu();
+				int option = 0;
+				userAccountmenu();
+				option = Helper.readInt("Enter option > ");
+				if (option == 1) {
+					C206_CaseStudy.addParentAccount(parentList);
+				}
+				if (option == 2) {
+					C206_CaseStudy.addStudentAccount(studentList);
+				}
+				if (option == 3) {
+					C206_CaseStudy.viewAllParentAccount(parentList);
+				}
+				if (option == 4) {
+					C206_CaseStudy.viewAllStudentAccount(studentList);
+				}
+				if (option == 5) {
+					C206_CaseStudy.updateParentAccount(parentList);
+				}
+				if (option == 6) {
+					C206_CaseStudy.updateStudentAccount(studentList);
+				}
+				if (option == 7) {
+					C206_CaseStudy.searchStudentAccount(studentList);
+				}
+				if (option > 8 || option < 1) {
+					System.out.println("Please enter a valid option");
 				}
 			}
-			else if(userInput == 4) {
+
+			else if (userInput == 2) {
+				
+
+			} 
+			else if (userInput == 3) {
+				C206_CaseStudy.subOrderMenu();
+				int option = 0;
+				option = Helper.readInt("Enter option > ");
+				
+				
 				
 			}
-			
-			C206_CaseStudy.mainMenu();
-			userInput = Helper.readInt("Please Enter Choice > ");
-			
-		}
-		
-		System.out.println("Thank you and have a nice day!");
+			else if (userInput == 4) {
+				
+			}
+			else {
+				
+			}
 	}
-	
+
+	System.out.println("Thank you and have a nice day!");}
+
 	public static void mainMenu() {
 		Helper.line(100, "-");
 		System.out.println("WELCOME TO TEAM 2'S SCHOOL LUNCH APP ORDERING SYSTEM");
@@ -95,7 +78,7 @@ public class C206_CaseStudy {
 		System.out.println("4. To Be Filled In");
 		System.out.println("5. Exit");
 	}
-	
+
 	public static void subOrderMenu() {
 		Helper.line(100, "-");
 		System.out.println("ORDER");
@@ -104,8 +87,7 @@ public class C206_CaseStudy {
 		System.out.println("2. Delete Order");
 		System.out.println("3. View Order(s)");
 		System.out.println("4. Exit");
-		
-		
+
 	}
 
 	public static void userAccountmenu() {
@@ -120,15 +102,15 @@ public class C206_CaseStudy {
 		System.out.println("6. Update Student Account");
 		System.out.println("7. Search for Student Account");
 		System.out.println("8. Quit");
-	
-}
-	
+
+	}
+
 	public static void addOrder(ArrayList<Order> orderList) {
 		/*
 		 * Mika's Created View Menu Item Method, this helps support my method as
 		 * afterwards users can choose their orders from the specified menu shown.
 		 */
-		//viewAllMenuItem(menuItemList);
+		// viewAllMenuItem(menuItemList);
 
 		ArrayList<MenuItem> choosenMenuItemList = new ArrayList<MenuItem>();
 		String studentId = Helper.readString("Please Enter Your Student ID > ");
@@ -354,7 +336,6 @@ public class C206_CaseStudy {
 		BillList.add(new Bill(payee, totalAmount, dueDate));
 	}
 
-
 	public void deleteBillItem(ArrayList<Bill> BillList) {
 
 		boolean isDeleted = false;
@@ -376,142 +357,149 @@ public class C206_CaseStudy {
 			System.out.println("An Error Has Occured, Please Try Again!");
 		}
 	}
+
 	public static String retrieveAllParentAccount(ArrayList<ParentAccount> parentList) {
 		String output = "";
 
 		for (int i = 0; i < parentList.size(); i++) {
 
-			output += String.format("%-15s %-15d %-15s %-10.2f\n", parentList.get(i).getAccountName(), parentList.get(i).getContactNo(),
-					parentList.get(i).getPassword(), parentList.get(i).getCreditBal());
-			
-	}
-	return output;
-}
-	public static String retrieveAllStudentAccount(ArrayList<StudentAccount> studentList) {
-		String output = "";
-		for (int i = 0; i>studentList.size(); i++) {
-			output += String.format("%-15s %-15d %-15s %-10d\n", studentList.get(i).getAccountName(),
-					studentList.get(i).getContactNo(), studentList.get(i).getPassword(), studentList.get(i).getStudentID());
+			output += String.format("%-15s %-15d %-15s %-10.2f\n", parentList.get(i).getAccountName(),
+					parentList.get(i).getContactNo(), parentList.get(i).getPassword(),
+					parentList.get(i).getCreditBal());
+
 		}
 		return output;
 	}
-	
+
+	public static String retrieveAllStudentAccount(ArrayList<StudentAccount> studentList) {
+		String output = "";
+		for (int i = 0; i > studentList.size(); i++) {
+			output += String.format("%-15s %-15d %-15s %-10d\n", studentList.get(i).getAccountName(),
+					studentList.get(i).getContactNo(), studentList.get(i).getPassword(),
+					studentList.get(i).getStudentID());
+		}
+		return output;
+	}
+
 	public static void viewAllParentAccount(ArrayList<ParentAccount> parentList) {
 		C206_CaseStudy.setHeader("PARENT ACCOUNT LIST");
-		String output = String.format("%-15s %-15s %-15s %-10s\n","ACCOUNT NAME", "CONTACT NUMBER", "PASSWORD", "CREDIT BALANCE" );
+		String output = String.format("%-15s %-15s %-15s %-10s\n", "ACCOUNT NAME", "CONTACT NUMBER", "PASSWORD",
+				"CREDIT BALANCE");
 		output += retrieveAllParentAccount(parentList);
 		System.out.println(output);
 	}
+
 	public static void viewAllStudentAccount(ArrayList<StudentAccount> studentList) {
 		C206_CaseStudy.setHeader("STUDENT ACCOUNT LIST");
-		String output = String.format("%-15s %-15s %-15s %-10s\n","ACCOUNT NAME", "CONTACT NUMBER", "PASSWORD", "STUDENT ID" );
+		String output = String.format("%-15s %-15s %-15s %-10s\n", "ACCOUNT NAME", "CONTACT NUMBER", "PASSWORD",
+				"STUDENT ID");
 		output += retrieveAllStudentAccount(studentList);
 		System.out.println(output);
 	}
-	
+
 	public static void setHeader(String header) {
 		Helper.line(80, "-");
 		System.out.println(header);
 		Helper.line(80, "-");
 	}
+
 	public static void addParentAccount(ArrayList<ParentAccount> parentList) {
 		String name = Helper.readString("Enter User Account name > ");
 		String password = Helper.readString("Enter password > ");
 		int contactNo = Helper.readInt("Enter contact number > ");
 		double creditBal = Helper.readDouble("Enter prepaid credit balance(if any) > ");
 		int auth = 0;
-		for(int i = 0;i<parentList.size();i++) {
-			if(parentList.get(i).getAccountName().equalsIgnoreCase(name)) {
+		for (int i = 0; i < parentList.size(); i++) {
+			if (parentList.get(i).getAccountName().equalsIgnoreCase(name)) {
 				auth = 1;
 			}
 		}
-		if(auth == 1) {
+		if (auth == 1) {
 			System.out.println("User account Name already exists!");
 		}
-		if (auth ==0) {
+		if (auth == 0) {
 			parentList.add(new ParentAccount(name, contactNo, password, creditBal));
 			System.out.println("User Account Added!");
-			
+
 		}
 	}
+
 	public static void addStudentAccount(ArrayList<StudentAccount> studentList) {
 		String name = Helper.readString("Enter User Account Name > ");
 		String password = Helper.readString("Enter password > ");
 		int contactNo = Helper.readInt("Enter contact number > ");
 		int studentID = Helper.readInt("Enter student ID > ");
 		int auth = 0;
-		for(int i = 0;i<studentList.size();i++) {
-			if(studentList.get(i).getAccountName().equalsIgnoreCase(name)) {
+		for (int i = 0; i < studentList.size(); i++) {
+			if (studentList.get(i).getAccountName().equalsIgnoreCase(name)) {
 				auth = 1;
 			}
 		}
-		if(auth == 1) {
+		if (auth == 1) {
 			System.out.println("User account Name already exists!");
 		}
-		if (auth ==0) {
+		if (auth == 0) {
 			studentList.add(new StudentAccount(name, contactNo, password, studentID));
 			System.out.println("User Account Added!");
-			
+
 		}
 	}
-	
+
 	public static void updateParentAccount(ArrayList<ParentAccount> parentList) {
 		String Oldname = Helper.readString("Enter name of user Account to update > ");
 		String Newname = Helper.readString("Enter the new name of user account > ");
 		int NewcontactNo = Helper.readInt("Enter new contact number > ");
 		int auth = 0;
 		int no = 0;
-		for(int i = 0;i<parentList.size();i++) {
-			if(parentList.get(i).getAccountName().equalsIgnoreCase(Oldname)) {
+		for (int i = 0; i < parentList.size(); i++) {
+			if (parentList.get(i).getAccountName().equalsIgnoreCase(Oldname)) {
 				auth = 1;
 				no = i;
 			}
 		}
-		if(auth == 0) {
+		if (auth == 0) {
 			System.out.println("User account Name is invalid!");
-		}
-		else {
+		} else {
 			parentList.get(no).setAccountName(Newname);
 			parentList.get(no).setContactNo(NewcontactNo);
 			System.out.println("Account information updated!");
 		}
 	}
+
 	public static void updateStudentAccount(ArrayList<StudentAccount> studentList) {
 		String Oldname = Helper.readString("Enter name of user Account to update > ");
 		String Newname = Helper.readString("Enter the new name of user account > ");
 		int NewcontactNo = Helper.readInt("Enter new contact number > ");
 		int auth = 0;
 		int no = 0;
-		for(int i = 0;i<studentList.size();i++) {
-			if(studentList.get(i).getAccountName().equalsIgnoreCase(Oldname)) {
+		for (int i = 0; i < studentList.size(); i++) {
+			if (studentList.get(i).getAccountName().equalsIgnoreCase(Oldname)) {
 				auth = 1;
 				no = i;
 			}
 		}
-		if(auth == 0) {
+		if (auth == 0) {
 			System.out.println("User account Name is invalid!");
-		}
-		else {
+		} else {
 			studentList.get(no).setAccountName(Newname);
 			studentList.get(no).setContactNo(NewcontactNo);
 			System.out.println("Account information updated!");
 		}
 	}
-	
+
 	public static void searchStudentAccount(ArrayList<StudentAccount> studentList) {
 		int studentId = Helper.readInt("Enter student ID > ");
-		int auth =0;
+		int auth = 0;
 		int no = 0;
-		for (int i = 0; i<studentList.size();i++) {
-			if(studentList.get(i).getStudentID() == studentId) {
-				auth =1;
+		for (int i = 0; i < studentList.size(); i++) {
+			if (studentList.get(i).getStudentID() == studentId) {
+				auth = 1;
 				no = i;
 			}
 		}
 		if (auth == 0) {
 			System.out.println("User was not found/ Student Id was Invalid!");
-		}
-		else {
+		} else {
 			System.out.println(studentList.get(no).getAccountName());
 		}
 	}
